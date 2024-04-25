@@ -119,50 +119,50 @@ spec:
         - type: ToCompositeFieldPath
           fromFieldPath: status.atProvider.id
           toFieldPath: spec.vmId
-    ### Configuration ###
-    - name: virtual-machine-config
-      base:
-        apiVersion: compute.azure.upbound.io/v1beta1
-        kind: VirtualMachineRunCommand
-        spec:
-          providerConfigRef:
-            name: 
-          forProvider:
-            location: West Europe
-            virtualMachineId: 
-            source:
-            - script: |
-                echo "Apply initial VM configuration."
-      patches:
-        - type: PatchSet
-          patchSetName: provider-config
-        - type: FromCompositeFieldPath
-          fromFieldPath: spec.vmId
-          toFieldPath: spec.forProvider.virtualMachineId
-          policy:
-            fromFieldPath: Required
-        - type: ToCompositeFieldPath
-          fromFieldPath: status.atProvider.instanceView[0].errorMessage
-          toFieldPath: status.command.errorMessage
-          policy:
-            fromFieldPath: Required
-        - type: ToCompositeFieldPath
-          fromFieldPath: status.atProvider.instanceView[0].executionMessage
-          toFieldPath: status.command.executionMessage
-          policy:
-            fromFieldPath: Required
-        - type: ToCompositeFieldPath
-          fromFieldPath: status.atProvider.instanceView[0].executionState
-          toFieldPath: status.command.executionState
-          policy:
-            fromFieldPath: Required
-        - type: ToCompositeFieldPath
-          fromFieldPath: status.atProvider.instanceView[0].exitCode
-          toFieldPath: status.command.exitCode
-          policy:
-            fromFieldPath: Required
-        - type: ToCompositeFieldPath
-          fromFieldPath: status.atProvider.instanceView[0].output
-          toFieldPath: status.command.output
-          policy:
-            fromFieldPath: Required
+    # ### Configuration ###
+    # - name: virtual-machine-config
+    #   base:
+    #     apiVersion: compute.azure.upbound.io/v1beta1
+    #     kind: VirtualMachineRunCommand
+    #     spec:
+    #       providerConfigRef:
+    #         name: 
+    #       forProvider:
+    #         location: West Europe
+    #         virtualMachineId: 
+    #         source:
+    #         - script: |
+    #             echo "Apply initial VM configuration."
+    #   patches:
+    #     - type: PatchSet
+    #       patchSetName: provider-config
+    #     - type: FromCompositeFieldPath
+    #       fromFieldPath: spec.vmId
+    #       toFieldPath: spec.forProvider.virtualMachineId
+    #       policy:
+    #         fromFieldPath: Required
+    #     - type: ToCompositeFieldPath
+    #       fromFieldPath: status.atProvider.instanceView[0].errorMessage
+    #       toFieldPath: status.command.errorMessage
+    #       policy:
+    #         fromFieldPath: Required
+    #     - type: ToCompositeFieldPath
+    #       fromFieldPath: status.atProvider.instanceView[0].executionMessage
+    #       toFieldPath: status.command.executionMessage
+    #       policy:
+    #         fromFieldPath: Required
+    #     - type: ToCompositeFieldPath
+    #       fromFieldPath: status.atProvider.instanceView[0].executionState
+    #       toFieldPath: status.command.executionState
+    #       policy:
+    #         fromFieldPath: Required
+    #     - type: ToCompositeFieldPath
+    #       fromFieldPath: status.atProvider.instanceView[0].exitCode
+    #       toFieldPath: status.command.exitCode
+    #       policy:
+    #         fromFieldPath: Required
+    #     - type: ToCompositeFieldPath
+    #       fromFieldPath: status.atProvider.instanceView[0].output
+    #       toFieldPath: status.command.output
+    #       policy:
+    #         fromFieldPath: Required

@@ -58,21 +58,21 @@ spec:
                 - virtualNetwork
                 - subnet
                 - publicKey
-            status:
-              type: object
-              properties:
-                command:
-                  type: object
-                  properties:
-                    errorMessage:
-                      type: string
-                    executionMessage:
-                      type: string
-                    executionState:
-                      type: string
-                    exitCode:
-                      type: number
-                    output:
-                      type: string
+            # status:
+            #   type: object
+            #   properties:
+            #     command:
+            #       type: object
+            #       properties:
+            #         errorMessage:
+            #           type: string
+            #         executionMessage:
+            #           type: string
+            #         executionState:
+            #           type: string
+            #         exitCode:
+            #           type: number
+            #         output:
+            #           type: string
   enforcedCompositionRef:
     name: azure-linux-vm

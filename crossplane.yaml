@@ -4,5 +4,7 @@ metadata:
   name: test-1-configuration
 spec:
   dependsOn:
-    - provider: xpkg.upbound.io/nicoandres/azure-provider
-      version: "0.42.0-na"
+    - provider: xpkg.upbound.io/upbound/provider-compute-azure  
+      version: "v1.0.1"
+    - provider: xpkg.upbound.io/upbound/provider-network-azure  
+      version: "v1.0.1"
